@@ -66,21 +66,66 @@ ui <- page_fillable(
         )
     ),
 
-    div(
+    layout_columns(
       card(
           h4(
             "Total Units Count",
+            style="color: #ffffff; text-align: center; font-weight: 500;"
           ),
-          textOutput("total_units_card")
+          div(
+            textOutput("total_units_card"),
+            style="
+                      font-size: 48px;
+                      font-weight: bold;
+                      text-align: center;
+                      color: #ffffff;
+                      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+                  "
+          ),
+          style="
+                    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+                    border-radius: 15px;
+                    padding: 25px;
+                    height: 200px;
+                    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+                "
       ),
 
       card(
-          h4(
-            "Buildings Summary",
-          ),
+        h4(
+          "Buildings Summary",
+          style="text-align: center; font-weight: 600; color: #ffffff;"
+        ),
+        div(
           tableOutput("building_table"),
-          height = "350px"
-      )
+          style="
+                    width: 100%;
+                    max-height: 320px;
+                    overflow-y: auto;
+                    padding: 0;
+                    border-radius: 12px;
+                    background-color: transparent;
+                "
+        ),
+        style="
+                  border-radius: 15px;
+                  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+                  background: #777a7f;
+                  border: 1px solid #dfe6e9;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: stretch;
+                  flex-grow: 1;
+                  padding: 12px;
+              "
+      ),
+      style="
+                display:flex;
+                flex-direction:column;
+                gap:15px;
+                flex:4;
+                height:100%;
+            "
     )
   )
 )
